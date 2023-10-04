@@ -1,0 +1,775 @@
+<!--APIKey = AIzaSyDuLNdbUKz0114JK1DbQkWKN1vd-q62034-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #main-panel{
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            text-align: center;
+            align-self: auto;
+            background-color: #235787;
+            border: 1px solid #F7F7F7;
+            border-radius: 0.3cm;
+        }
+        @media (max-width: 700px) {
+            #main-panel {
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 700px) {
+            body {
+                font-size: 15px;
+        }
+    }
+    img[src=""] {
+        display: none;
+    }
+    #clearBtn{
+            justify-content: space-between;
+            align-items: center;
+            width: 10px;
+            padding: 5px;
+            width: auto;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: #235787;
+            border: 3px solid #bf9e1b;
+            border-radius: 0.2cm;
+            cursor: pointer;
+        }
+    #header-panel, .panel-header {
+            display: flex;
+            width: auto;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: #235787;
+            border: 5px solid #F7F7F7;
+            border-radius: 0.3cm;
+        }
+        @media (max-width: 700px) {
+          #header-panel, .panel-header {
+            flex-direction: column;
+        }
+        }
+        @media (max-width: 700px) {
+            body {
+                font-size: 18px;
+        }
+    }
+    .color1 {
+            color: #BF9E1B;
+            text-shadow:
+            0 0 5px #003366,
+            0 0 10px #003366,
+            0 0 15px #BF9E1B,
+            0 0 20px #BF9E1B,
+            0 0 30px #BF9E1B,
+            0 0 40px #BF9E1B;
+        }
+
+        h1 {
+            color: rgb(255, 255, 255); 
+        }
+        #button-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        @media (max-width: 600px) {
+            #button-panel {
+                flex-direction: row;
+            }
+        }
+        #button-panel{            
+            padding: 5px;
+            margin-bottom: auto;
+            text-align: center;
+            background-color: #235787;
+            border: 5px solid #F7F7F7;
+            border-radius: 0.3cm;
+        }
+        #language-button{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        #image-panel {
+            width: 300px;
+            height: 300px;
+            background-color: #235787;
+            border: 5px solid #BF9E1B;
+            float: left;
+        }
+
+        #imgviwer-panel1{
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            width: auto;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: #BF9E1B;
+            border: 1px solid #F7F7F7;
+            border-radius: 0.2cm;
+            cursor: pointer;            
+        }
+        #imgviwer-panel2{
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            width: auto;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: #BF9E1B;
+            border: 1px solid #F7F7F7;
+            border-radius: 0.2cm;
+            cursor: pointer;
+                        
+        }
+        #place-toimage {
+            width: 100%;
+            height: auto;
+        }
+        #place-fromimage {
+            width: 100%;
+            height: auto;
+            
+        }
+
+        #logo, .panel-logo {
+            width: 150px;
+            height: 120px;
+        }
+        #scrollBtn, .scrollBtn{
+            justify-content: space-between;
+            align-items: center;
+            width: 10px;
+            padding: 5px;
+            width: auto;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: #235787;
+            border: 3px solid #bf9e1b;
+            border-radius: 0.2cm;
+            cursor: pointer;
+        }
+        #language-button,#help-button,button{
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            width: auto;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: #BF9E1B;
+            border: 1px solid #235787;
+            border-radius: 0.2cm;
+            cursor: pointer;
+            
+        }
+        #more-button,button{
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            width: 40%;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            border-radius: 0.2cm;
+            cursor: pointer;
+        }
+        #panels-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #imgviwer-panel1, #imgviwer-panel2 {
+            flex: 3;
+            margin: 1px;
+            background-color: #BF9E1B;
+            border: 5px solid #235787;
+        }
+
+        #from-panel, #to-panel{
+            background-color: #235787;
+            border: 5px solid #BF9E1B;
+            padding: 20px;
+            margin-bottom: 10px;
+            text-align: center; /* Centers the text */
+            border-radius: 0.3cm;
+        }
+        .combobox-container,.combobox-container1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .combobox-container > div {
+            width: 49%;
+        }
+
+        select {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 10px;
+            resize: both;
+            overflow: auto;
+            border-radius: 0.2cm;
+        }
+        .combobox-container1 > div {
+            width: 49%;
+        }
+
+        select {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 10px;
+            resize: both;
+            overflow: auto;
+            border-radius: 0.2cm;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id="main-panel">
+        <div id="header-panel">
+            <img id="logo" src="images/converted_image.png" alt="Logo"> <!-- Replace 'logo.png' with the path to your logo image -->
+            <h1><span class="color1">H</span>elwan <span class="color1">U</span>niversity<span class="color1"> G</span>uide</h1>        
+        </div>
+        <div id="button-panel">
+                <button id="help-button">Help</button>
+                <button id="help-button">Help</button> 
+                <button id="help-button">Help</button> 
+                <button id="language-button">EN</button>
+            </div>
+        </div>
+    </div>
+    <button id="scrollBtn" style="position: fixed; bottom: 20px; right: 20px;">⬇️</button>
+    <button style="position: fixed; bottom: 20px; left: 20px;" id="clearBtn"></button>
+    <div id="from-panel">
+        <h2>From</h2>
+        <input type="checkbox" id="currentlocation">
+        <label id="location_"for="currentlocation">My Current Location</label><br>
+        <button id="more-button">More</button>
+        <div class="combobox-container">
+            <div class="combobox0">
+                <select>
+                    <option value="" selected disabled hidden>Place-1</option>
+                    <option value="30.0444, 31.2357">Cairo</option> <!-- GPS coordinates for Cairo -->
+                    <option value="51.5074, -0.1278">London</option> <!-- GPS coordinates for London -->
+                    <option value="40.7128, -74.0060">New York</option> <!-- GPS coordinates for New York -->
+                </select>                
+            </div> 
+            <div class="combobox1">
+                <select>
+                    <option value="" selected disabled hidden>Place-2</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox2">
+                <select>
+                    <option value="" selected disabled hidden>Place-3</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox3">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox4">
+                <select>
+                    <option value="" selected disabled hidden>Place-1</option>
+                    <option value="30.0444, 31.2357">Cairo</option> <!-- GPS coordinates for Cairo -->
+                    <option value="51.5074, -0.1278">London</option> <!-- GPS coordinates for London -->
+                    <option value="40.7128, -74.0060">New York</option> <!-- GPS coordinates for New York -->
+                </select>                
+            </div> 
+            <div class="combobox5">
+                <select>
+                    <option value="" selected disabled hidden>Place-2</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox6">
+                <select>
+                    <option value="" selected disabled hidden>Place-3</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox7">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div>
+            <div class="combobox8">
+                <select>
+                    <option value="" selected disabled hidden>Place-1</option>
+                    <option value="30.0444, 31.2357">Cairo</option> <!-- GPS coordinates for Cairo -->
+                    <option value="51.5074, -0.1278">London</option> <!-- GPS coordinates for London -->
+                    <option value="40.7128, -74.0060">New York</option> <!-- GPS coordinates for New York -->
+                </select>                
+            </div> 
+            <div class="combobox9">
+                <select>
+                    <option value="" selected disabled hidden>Place-2</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox10">
+                <select>
+                    <option value="" selected disabled hidden>Place-3</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox11">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div>
+            <div class="combobox12">
+                <select>
+                    <option value="" selected disabled hidden>Place-1</option>
+                    <option value="30.0444, 31.2357">Cairo</option> <!-- GPS coordinates for Cairo -->
+                    <option value="51.5074, -0.1278">London</option> <!-- GPS coordinates for London -->
+                    <option value="40.7128, -74.0060">New York</option> <!-- GPS coordinates for New York -->
+                </select>                
+            </div> 
+            <div class="combobox13">
+                <select>
+                    <option value="" selected disabled hidden>Place-2</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox14">
+                <select>
+                    <option value="" selected disabled hidden>Place-3</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox15">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div>
+            <div class="combobox16">
+                <select>
+                    <option value="" selected disabled hidden>Place-1</option>
+                    <option value="30.0444, 31.2357">Cairo</option> <!-- GPS coordinates for Cairo -->
+                    <option value="51.5074, -0.1278">London</option> <!-- GPS coordinates for London -->
+                    <option value="40.7128, -74.0060">New York</option> <!-- GPS coordinates for New York -->
+                </select>                
+            </div> 
+            <div class="combobox17">
+                <select>
+                    <option value="" selected disabled hidden>Place-2</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox18">
+                <select>
+                    <option value="" selected disabled hidden>Place-3</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox19">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div>
+            <div class="combobox20">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div>
+            <div class="combobox21">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div>
+            <div class="combobox22">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div>
+            <div class="combobox23">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div>
+        </div>
+        <button id="golocationbtn">Go</button>
+    </div>
+    <div id="to-panel">
+        <h2>To</h2>
+        <div class="combobox-container1">
+            <div class="combobox0">
+                <select>
+                    <option value="" selected disabled hidden>Place-1</option>
+                    <option value="30.0444, 31.2357">Cairo</option> <!-- GPS coordinates for Cairo -->
+                    <option value="51.5074, -0.1278">London</option> <!-- GPS coordinates for London -->
+                    <option value="40.7128, -74.0060">New York</option> <!-- GPS coordinates for New York -->
+                </select>                
+            </div> 
+            <div class="combobox1">
+                <select>
+                    <option value="" selected disabled hidden>Place-2</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox2">
+                <select>
+                    <option value="" selected disabled hidden>Place-3</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+            <div class="combobox3">
+                <select>
+                    <option value="" selected disabled hidden>Place-4</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div> 
+        </div>
+    </div>
+    <div id="panels-container">
+        <div id="imgviwer-panel1">
+            <h2>From</h2>
+            <div id="image-panel1">
+                <img id="place-fromimage" src="" alt="From Image">
+            </div>
+        </div>  
+        <div id="imgviwer-panel2">
+            <h2>To</h2>
+            <div id="image-panel2">
+                <img id="place-toimage" src="" alt="To Image">
+            </div>
+        </div>
+    </div>      
+    <script>
+
+        window.onload = function() {
+            var checkbox = document.getElementById('currentlocation');
+            var fromSelect = document.querySelector('#from-panel select');
+            var toSelect = document.querySelector('#to-panel select');
+            var img1 = document.getElementById('place-fromimage');
+            var img2 = document.getElementById('place-toimage');
+
+            function updateImage(select, img) {
+                var selectedPlace = select.options[select.selectedIndex].value;
+
+                if (selectedPlace === "30.0444, 31.2357") { // Cairo
+                    img.src = "images/option1.jpg"; // Replace with the actual path to the Cairo image
+                } else if (selectedPlace === "51.5074, -0.1278") { // London
+                    img.src = "images/option2.jpg"; // Replace with the actual path to the London image
+                } else if (selectedPlace === "40.7128, -74.0060") { // New York
+                    img.src = "path_to_newyork_image.jpg"; // Replace with the actual path to the New York image
+                } else {
+                    img.src = ""; // No image
+                }
+            }
+
+            fromSelect.addEventListener('change', function() {
+                updateImage(fromSelect, img1);
+            });
+
+            toSelect.addEventListener('change', function() {
+                updateImage(toSelect, img2);
+            });
+
+            checkbox.addEventListener('change', function(e) {
+                if (checkbox.checked) {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function(position) {
+                            var lat = position.coords.latitude;
+                            var lon = position.coords.longitude;
+                            var option = document.createElement('option');
+                            option.text = '';
+                            option.value = lat + ', ' + lon;
+                            fromSelect.add(option);
+                            fromSelect.selectedIndex = fromSelect.options.length - 1;
+
+                            // Get the image-panel1 element
+                            var imagePanel1 = document.getElementById('image-panel1');
+
+                            // Create a new img element
+                            var img = document.createElement('img');
+
+                            // Set the src attribute to the path of your image
+                            img.src = 'images/CL.png'; // Replace with the actual path to your image
+
+                            // Append the img element to image-panel1
+                            imagePanel1.appendChild(img);
+                        }, function(error) {
+                            alert('Error occurred. Error code: ' + error.code);
+                        });
+                    } else {
+                        alert('Geolocation is not supported in your browser');
+                    }
+                } else {
+                    // Loop through all options in the dropdown.
+                    for (var i = 0; i < fromSelect.options.length; i++) {
+                        // If the option's text is "Current Location", remove it.
+                        if (fromSelect.options[i].text === "Current Location") {
+                            fromSelect.remove(i);
+                            break;
+                        }
+                    }
+                    img1.src = "images/CL.png"; // Add image
+                    updateImage(fromSelect, img1); // Update image based on new selection
+                }
+            });
+
+
+        }
+        var checkbox = document.getElementById('currentlocation');
+        var fromSelect = document.querySelector('#from-panel select');
+        checkbox.addEventListener('change', function(e) {
+            if (checkbox.checked) {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var lat = position.coords.latitude;
+                        var lon = position.coords.longitude;
+                        var option = document.createElement('option');
+                        option.text = 'Current Location';
+                        option.value = lat + ', ' + lon;
+                        fromSelect.add(option);
+                        fromSelect.selectedIndex = fromSelect.options.length - 1;
+                    }, function(error) {
+                        alert('Error occurred. Error code: ' + error.code);
+                    });
+                } else {
+                    alert('Geolocation is not supported in your browser');
+                }
+            }
+        });
+        var url = window.location.href;
+        var languageButton = document.getElementById('language-button');
+        if (url.endsWith('index-ar.html')) {
+            languageButton.textContent = 'EN';
+        } else {
+            languageButton.textContent = 'AR';
+        }
+        languageButton.addEventListener('click', function() {
+            if (url.endsWith('index-ar.html')) {
+                window.location.href = url.replace('index-ar.html', 'index-en.html');
+                languageButton.textContent = 'AR';
+            } else {
+                window.location.href = url.replace('index-en.html', 'index-ar.html');
+                languageButton.textContent = 'EN';
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var isMinimized = true;
+            var fromPanel = document.getElementById('from-panel');
+            var selects = fromPanel.getElementsByTagName('select');
+            for (var i = 0; i < selects.length; i++) {
+                selects[i].style.display = 'none';
+            }
+            document.getElementById('more-button').addEventListener('click', function() {
+                if (!isMinimized) {
+                    fromPanel.style.width = 'auto';
+                    fromPanel.style.height = 'auto';
+                    for (var i = 0; i < selects.length; i++) {
+                        selects[i].style.display = 'none';
+                    }
+                    isMinimized = true;
+                } else {
+                    fromPanel.style.width = 'auto';
+                    fromPanel.style.height = 'auto';
+                    for (var i = 0; i < selects.length; i++) {
+                        selects[i].style.display = 'block';
+                    }
+                    isMinimized = false;
+                }
+            });
+            var checkbox = document.getElementById('currentlocation');
+            var goButton = document.getElementById('golocationbtn');
+            var fromSelect = document.querySelector('#from-panel select');
+            var toSelect = document.querySelector('#to-panel select');
+    
+            goButton.addEventListener('click', function() {
+                if (fromSelect.selectedIndex === 0 || toSelect.selectedIndex === 0) {
+                    alert('Please select a location from both the From and To dropdowns.');
+                    return;
+                }
+                var fromValue = fromSelect.options[fromSelect.selectedIndex].value;
+                var toValue = toSelect.options[toSelect.selectedIndex].value;
+                var googleMapsUrl = 'https://www.google.com/maps/dir/' + encodeURIComponent(fromValue) + '/' + encodeURIComponent(toValue);
+                window.location.href = googleMapsUrl;
+            });
+            checkbox.addEventListener('change', function(e) {
+                // Get the image-panel1 and place-toimage elements
+                var imagePanel1 = document.getElementById('image-panel1');
+                var placeToImage = document.getElementById('place-toimage');
+
+                if (checkbox.checked) {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function(position) {
+                            var lat = position.coords.latitude;
+                            var lon = position.coords.longitude;
+                            var option = document.createElement('option');
+                            option.text = '';
+                            option.value = lat + ', ' + lon;
+                            fromSelect.add(option);
+                            fromSelect.selectedIndex = fromSelect.options.length - 1;
+
+                            // Set the src attribute to the path of your image
+                            placeToImage.src = 'images/CL.png'; // Replace with the actual path to your image
+
+                            // Append the placeToImage element to image-panel1
+                            imagePanel1.appendChild(placeToImage);
+                        }, function(error) {
+                            alert('Error occurred. Error code: ' + error.code);
+                        });
+                    } else {
+                        alert('Geolocation is not supported in your browser');
+                    }
+                } else {
+                    // Loop through all options in the dropdown.
+                    for (var i = 0; i < fromSelect.options.length; i++) {
+                        // If the option's text is "Current Location", remove it.
+                        if (fromSelect.options[i].text === "Current Location") {
+                            fromSelect.remove(i);
+                            break;
+                        }
+                    }
+                    // Remove image
+                    placeToImage.src = ""; 
+                    updateImage(fromSelect, img1); // Update image based on new selection
+                }
+            });
+        });   
+        var scrollBtn = document.getElementById('scrollBtn');
+
+        // Scroll button event listener
+        scrollBtn.addEventListener('click', function() {
+            if (window.pageYOffset > 0) {
+                // If not at the top, scroll to the top.
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } else {
+                // If at the top, scroll to the bottom.
+                window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            // Create a new img element
+            var img = document.createElement('img');
+
+            // Set the width and height attributes
+            img.width = 30;  // Replace with your desired width
+            img.height = 30; // Replace with your desired height
+
+            if (window.pageYOffset > 0) {
+                // Set the src attribute to the path of up.png
+                img.src = 'images/up.png';
+            } else {
+                // Set the src attribute to the path of down.png
+                img.src = 'images/down.png';
+            }
+
+            // Remove all children of scrollBtn
+            while (scrollBtn.firstChild) {
+                scrollBtn.removeChild(scrollBtn.firstChild);
+            }
+
+            // Append the img element to scrollBtn
+            scrollBtn.appendChild(img);
+        });
+        var clearBtn = document.getElementById('clearBtn');
+        var fromSelect = document.querySelector('#from-panel select');
+        var toSelect = document.querySelector('#to-panel select');
+        var checkbox = document.getElementById('currentlocation');
+
+        // Create a new img element
+        var img = document.createElement('img');
+
+        // Set the src attribute to the path of your icon
+        img.src = 'images/reset.png'; // Replace with the actual path to your icon
+
+        // Set the width and height attributes if necessary
+        img.style.width = '20px';  // Replace with your desired width
+        img.style.height = '20px'; // Replace with your desired height
+
+        // Append the img element to clearBtn
+        clearBtn.appendChild(img);
+
+        // Clear button event listener
+        // Get the images
+        var placeFromImage = document.getElementById('place-fromimage');
+        var placeToImage = document.getElementById('place-toimage');
+
+        // Clear button event listener
+        clearBtn.addEventListener('click', function() {
+            fromSelect.selectedIndex = 0;
+            toSelect.selectedIndex = 0;
+            checkbox.checked = false;
+
+            // Clear the images
+            placeFromImage.src = "";
+            placeToImage.src = "";
+        });
+        // Get the images
+        var placeFromImage = document.getElementById('place-fromimage');
+        var placeToImage = document.getElementById('place-toimage');
+
+        // Set the width and height
+        placeFromImage.style.width = 'auto';  // Replace with your desired width
+        placeFromImage.style.height = '150px'; // Replace with your desired height
+
+        placeToImage.style.width = 'auto';  // Replace with your desired width
+        placeToImage.style.height = '150px'; // Replace with your desired height
+
+
+
+
+    </script>    
+</body>
+</html>
